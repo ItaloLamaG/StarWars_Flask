@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      
+        <link rel="stylesheet" href="/static/main.css">
+        <title>Personajes</title>
+      </head>
+      
+      <body>
+      
+          <div id="header">
+            <h1>{{titulo}}</h1>
+          </div>
+      
+      <br>
+      
+            <div class="container">
+              {% for personaje in lista_personajes %}
+              {% if loop.index0 % 3 == 0 %}
+              <div class="row">
+              {% endif %}
+              <div class="col" id = "informacion_obj">
+                <h3 style="text-align:center">{{personaje.nombre}}</h3>
+                <p>Altura: {{personaje.altura}}</p>
+                <p>Peso: {{personaje.peso}}</p>
+                <p>Color de Cabello: {{personaje.color_cabello}}</p>
+                <p>Color de piel: {{personaje.color_piel}}</p>
+                <p>Fecha de Nacimiento: {{personaje.nacimiento}}</p>
+                <p>Genero: {{personaje.genero}}</p>
+              </div>
+              {% if loop.index0 % 3 == 2 or loop.last %}
+            </div>
+            {% endif %}
+          {% endfor %}
+      
+      </div>
+      
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      
+      
+      </body>
+</html>
